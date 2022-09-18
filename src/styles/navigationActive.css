@@ -1,0 +1,7 @@
+.active {
+  color: #e4672e;
+  border-left: 5px solid;
+  padding-left: calc(2rem - 5px);
+  font-size: 1.4rem;
+  transition: all .3s;
+}
