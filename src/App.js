@@ -10,10 +10,10 @@ const App = () => {
     <>
       <Router>
         <Routes>
-          <Route element={<Navigation />}>
-            <Route index element={<Home />} />
-            <Route path="/ingredient" element={<Ingredient />} />
-            <Route path="/foodCost" element={<FoodCost />} />
+          <Route basename={process.env.PUBLIC_URL} element={<Navigation />}>
+            <Route basename={process.env.PUBLIC_URL} index element={<Home />} />
+            <Route basename={process.env.PUBLIC_URL} path="/ingredient" element={<Ingredient />} />
+            <Route basename={process.env.PUBLIC_URL} path="/foodCost" element={<FoodCost />} />
           </Route>
         </Routes>
       </Router>
