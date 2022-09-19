@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/foodcost-react-version/static/css/main.b76decf2.css",
-    "main.js": "/foodcost-react-version/static/js/main.24723c31.js",
+    "main.js": "/foodcost-react-version/static/js/main.668ef6ea.js",
     "static/media/patrick001.jpg": "/foodcost-react-version/static/media/patrick001.9d0a4ddc3bb7671de445.jpg",
     "index.html": "/foodcost-react-version/index.html",
     "main.b76decf2.css.map": "/foodcost-react-version/static/css/main.b76decf2.css.map",
-    "main.24723c31.js.map": "/foodcost-react-version/static/js/main.24723c31.js.map"
+    "main.668ef6ea.js.map": "/foodcost-react-version/static/js/main.668ef6ea.js.map"
   },
   "entrypoints": [
     "static/css/main.b76decf2.css",
-    "static/js/main.24723c31.js"
+    "static/js/main.668ef6ea.js"
   ]
 }
