@@ -11,7 +11,7 @@ const App = () => {
       <Router>
         <Routes>
           <Route basename={process.env.PUBLIC_URL} element={<Navigation />}>
-            <Route basename={process.env.PUBLIC_URL} index element={<Home />} />
+            <Route basename={process.env.PUBLIC_URL} path="/foodcost-react-version" element={<Home />} />
             <Route basename={process.env.PUBLIC_URL} path="/ingredient" element={<Ingredient />} />
             <Route basename={process.env.PUBLIC_URL} path="/foodCost" element={<FoodCost />} />
           </Route>
