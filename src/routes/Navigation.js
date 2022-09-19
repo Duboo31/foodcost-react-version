@@ -14,7 +14,7 @@ import { useState } from "react";
 const Navigation = () => {
   const links = [
     {
-      path: "/",
+      path: "/foodcost-react-version",
       label: "사용방법",
       exact: "true",
       end: "true",
