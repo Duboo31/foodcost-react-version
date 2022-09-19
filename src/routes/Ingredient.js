@@ -54,7 +54,7 @@ const Ingredient = () => {
   const getXMLfromAPI = async () => {
     const url =
       "http://apis.data.go.kr/B552895/openapi/service/OrgPriceExaminService/getExaminPriceList?ServiceKey=";
-    const reqURL = `${url}${ENCODING_API_KEY}&pageNo=1&numOfRows=50&examinDe=20220902&examinCd=6&prdlstCd=223`;
+    const reqURL = `${url}${ENCODING_API_KEY}&pageNo=1&numOfRows=10&examinDe=20150502&examinCd=6&prdlstCd=223`;
     const response = await fetch(reqURL);
     const xmlString = await response.text();
     let XmlNode = new DOMParser().parseFromString(xmlString, "text/xml");
