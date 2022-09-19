@@ -1,6 +1,6 @@
 .wrap {
   padding: 1rem 2rem 2rem;
-  border-bottom: 1px solid rgb(87, 87, 87);
+  border-bottom: 1px solid rgb(197, 197, 197);
   color: #fff;
 }
 .info {
@@ -25,9 +25,9 @@ h4 {
   font-weight: bold;
 }
 .arrow {
-  font-size: 1.3rem;
+  font-size: 1.7rem;
   align-self: flex-start;
-  margin: 0.2rem 0 0 4.5rem;
+  margin-left: 3rem;
   cursor: pointer;
 }
 .detail {
@@ -41,7 +41,7 @@ h4 {
 .hide {
   visibility: hidden;
   height: 0;
-  transition: all .5s;
+  transition: all .3s;
   display: flex;
   flex-flow: column nowrap;
 }

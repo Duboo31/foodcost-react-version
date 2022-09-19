@@ -3,6 +3,7 @@ import Home from "./routes/Home";
 import Ingredient from "./routes/Ingredient";
 import FoodCost from "./routes/FoodCost";
 import Navigation from "./routes/Navigation";
+import "./styles/app.css"
 
 const App = () => {
   return (

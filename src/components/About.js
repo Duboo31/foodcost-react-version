@@ -9,8 +9,23 @@ const About = () => {
   const clickArrow = () => {
     setArrow((cur) => !cur);
   };
+  const detailInfo = [
+    {
+      style: "detailInfo",
+      text: "Name: Hyunwoo Kim",
+    },
+    {
+      style: "detailInfo",
+      text: "Email: duboo31@gmail.com",
+    },
+    {
+      style: "detailInfo",
+      text: "KaKao: zlwhs807@naver.com",
+    },
+  ];
   return (
     <section className={styles.wrap}>
+      <div className="mobile"></div>
       <div className={styles.info}>
         <img className={styles.aboutImg} src={aboutImg} alt="aboutImg" />
         <div>
@@ -23,13 +38,29 @@ const About = () => {
           className={styles.arrow}
         />
       </div>
-        <div className={arrow ? styles.detail : styles.hide}>
-          <div className={styles.detailInfo}>Name: Hyunwoo Kim</div>
-          <div className={styles.detailInfo}>Email: duboo31@gmail.com</div>
-          <div className={styles.detailInfo}>KaKao: zlwhs807@naver.com</div>
-          <a className={styles.aTag} rel="noopener noreferrer" href="https://github.com/Duboo31" target="_blank">Github</a>
-          <a className={styles.aTag} rel="noopener noreferrer" href="https://velog.io/@duboo" target="_blank">Blog</a>
-        </div>
+      <div className={arrow ? styles.detail : styles.hide}>
+        {detailInfo.map(({ style, text }) => (
+          <div className={styles[style]} key={text}>
+            {text}
+          </div>
+        ))}
+        <a
+          className={styles.aTag}
+          rel="noopener noreferrer"
+          href="https://github.com/Duboo31"
+          target="_blank"
+        >
+          Github
+        </a>
+        <a
+          className={styles.aTag}
+          rel="noopener noreferrer"
+          href="https://velog.io/@duboo"
+          target="_blank"
+        >
+          Blog
+        </a>
+      </div>
     </section>
   );
 };

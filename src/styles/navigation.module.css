@@ -2,42 +2,74 @@
   display: flex;
   height: 100vh;
   min-width: 350px;
-  position: relative;
+  position: fixed;
   left: 0;
   top: 0;
-  transition: all 1s;
+  transition: all 0.5s;
 }
 .nav {
-  background: #181818;
+  background: #39383A;
   width: 350px;
 }
 .logo {
-  color: #fff;
   padding: 1rem 2.5rem 2rem;
-  border-bottom: 1px solid rgb(87, 87, 87);
+  border-bottom: 1px solid rgb(197, 197, 197);
   font-size: 2rem;
+  color: #fff;
 }
 ul li {
   padding: 1.5rem 0.5rem;
 }
-
 ul li a {
   text-decoration: none;
   color: #6c6c6c;
   font-size: 1.2rem;
-  font-weight: bold;
   padding-left: 2.3rem;
-  transition: all .3s;
+  transition: all 0.3s;
 }
-
 ul li a svg {
   margin-right: 1rem;
 }
 
-@media screen and (max-width: 1023px) {
+.mobile {
+  display: none;
+  width: 30px;
+  height: 90px;
+  background: #39383A;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  position: absolute;
+  bottom: 15%;
+}
+
+.mobile.open {
+  left: 310px;
+}
+
+.close {
+  left: 310px;
+}
+
+@media screen and (max-width: 1223px) {
   .wrap {
-    position: fixed;
-    left: -350px;
-    transition: all 1s;
+    min-width: 310px;
+  }
+  .nav {
+    width: 310px;
+  }
+  .wrap.open {
+    left: 0;
+  }
+  .wrap.wrapClose {
+    left: -310px;
+  }
+  .mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mobile svg {
+    color: #fff;
+    font-size: 2rem;
   }
 }
