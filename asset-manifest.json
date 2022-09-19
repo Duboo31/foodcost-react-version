@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/foodcost-react-version.git/static/css/main.b76decf2.css",
+    "main.js": "/foodcost-react-version.git/static/js/main.6197bdb4.js",
+    "static/media/patrick001.jpg": "/foodcost-react-version.git/static/media/patrick001.9d0a4ddc3bb7671de445.jpg",
+    "index.html": "/foodcost-react-version.git/index.html",
+    "main.b76decf2.css.map": "/foodcost-react-version.git/static/css/main.b76decf2.css.map",
+    "main.6197bdb4.js.map": "/foodcost-react-version.git/static/js/main.6197bdb4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b76decf2.css",
+    "static/js/main.6197bdb4.js"
+  ]
+}
