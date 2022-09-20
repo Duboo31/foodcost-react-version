@@ -3,11 +3,8 @@ import styles from "../styles/ingredient.module.css";
 const ENCODING_API_KEY = process.env.REACT_APP_API_KEY;
 
 const Ingredient = () => {
-  const [test, setTest] = useState(0);
-
-  const onClickTest = () => {
-    setTest((cur) => cur + 1);
-  };
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
 
   // xml을 json으로 변환해주는 xmlToJson함수
   function xmlToJson(xml) {
@@ -51,24 +48,33 @@ const Ingredient = () => {
   }
 
   // api 호출
-  const getXMLfromAPI = async () => {
-    const url =
-      "http://apis.data.go.kr/B552895/openapi/service/OrgPriceExaminService/getExaminPriceList?ServiceKey=";
-    const reqURL = `${url}${ENCODING_API_KEY}&pageNo=1&numOfRows=10&examinDe=20150502&examinCd=6&prdlstCd=223`;
-    const response = await fetch(reqURL);
-    const xmlString = await response.text();
-    let XmlNode = new DOMParser().parseFromString(xmlString, "text/xml");
-    console.log(xmlToJson(XmlNode));
-  };
   useEffect(() => {
+    const getXMLfromAPI = async () => {
+      const url =
+        "http://apis.data.go.kr/B552895/openapi/service/OrgPriceExaminService/getExaminPriceList?ServiceKey=";
+      const reqURL = `${url}${ENCODING_API_KEY}&pageNo=1&numOfRows=10&examinDe=20150502&examinCd=6&prdlstCd=223`;
+      const response = await fetch(reqURL);
+      const xmlString = await response.text();
+      let XmlNode = new DOMParser().parseFromString(xmlString, "text/xml");
+      console.log(xmlToJson(XmlNode).response.body.items.item);
+      setLoading(false);
+      setData(xmlToJson(XmlNode).response.body.items.item)
+    };
     getXMLfromAPI();
-  })
+  }, []);
 
   return (
     <section className={styles.wrap}>
-      <h1 onClick={onClickTest} className={styles.title}>
-        {test}
+      <h1 className={styles.title}>
+        재료추가하기
       </h1>
+      <div>{loading? <div>Loading</div> : (
+        <ul>
+          <li>
+          {data.map((g, idx) => <div key={idx}>{g.areaNm}</div>)}
+          </li>
+        </ul>
+      )}</div>
     </section>
   );
 };
