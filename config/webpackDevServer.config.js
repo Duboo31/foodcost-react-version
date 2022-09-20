@@ -90,7 +90,9 @@ module.exports = function (proxy, allowedHost) {
       // remove last slash so user can land on `/test` instead of `/test/`
       publicPath: paths.publicUrlOrPath.slice(0, -1),
     },
-
+    devServer: {
+      historyApiFallback: true
+    },
     https: getHttpsConfig(),
     host,
     historyApiFallback: {
