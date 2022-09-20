@@ -58,23 +58,27 @@ const Ingredient = () => {
       let XmlNode = new DOMParser().parseFromString(xmlString, "text/xml");
       console.log(xmlToJson(XmlNode).response.body.items.item);
       setLoading(false);
-      setData(xmlToJson(XmlNode).response.body.items.item)
+      setData(xmlToJson(XmlNode).response.body.items.item);
     };
     getXMLfromAPI();
   }, []);
 
   return (
     <section className={styles.wrap}>
-      <h1 className={styles.title}>
-        재료추가하기
-      </h1>
-      <div>{loading? <div>Loading</div> : (
-        <ul>
-          <li>
-          {data.map((g, idx) => <div key={idx}>{g.areaNm}</div>)}
-          </li>
-        </ul>
-      )}</div>
+      <h1 className={styles.title}>재료추가하기</h1>
+      <div>
+        {loading ? (
+          <div>Loading</div>
+        ) : (
+          <ul>
+            <li>
+              {data.map((g, idx) => (
+                <div key={idx}>{g.areaNm}</div>
+              ))}
+            </li>
+          </ul>
+        )}
+      </div>
     </section>
   );
 };
